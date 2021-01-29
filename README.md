@@ -119,7 +119,7 @@ This projects uses both the [spec-reporter](https://webdriver.io/docs/spec-repor
 
 Allure Report: 
 [Video Preview](https://www.youtube.com/watch?v=tL8R6BqxJ3o)
-![allure](src\assests\allure.png)
+![allure](src/assests/allure.png)
 
 
 ## Made with ❤️ and ☕️
