@@ -1,6 +1,6 @@
 # WebdriverIO Training
 
-This is a test automation project that uses WebdriverIO v6. This project demonstrates examples of how to write tests in WebDriverIO and how to leverage some new features introduced in v6 as well as how to use the Page Object Pattern for automated testing.
+This is a test automation project that uses WebdriverIO v6. This project demonstrates examples of how to write tests in WebDriverIO and how to leverage some new features introduced in v6 as well as how to use the Page Object Pattern for Automated Testing.
 
 ## Getting Started
 ```
@@ -56,7 +56,7 @@ class LoginPage extends BasePage {
 export default new LoginPage();
 ```
 
-##### `test/login.spec.js`
+##### `test/specs/login.spec.js`
 
 
 ```javascript
@@ -111,7 +111,7 @@ Command to run a single test headlessly (For CI/CD pipelines)
     wdio wido.pipelines.conf.js --spec ./test/specs/nameoftestfile.js
 ```
 
-## Test examples
+## Test Examples
 The tests in this project use [http://the-internet.herokuapp.com](http://the-internet.herokuapp.com) to demonstrate how to interact with some of the most common `UI elements` you will encounter such as: dropdowns, basic auth, dynamic loading (waitUntil) and file uploads. The [official documentation](https://webdriver.io/docs/api.html) already covers most of these but it never hurts to see a practical example wired up and working. 
 
 ## Reporters
