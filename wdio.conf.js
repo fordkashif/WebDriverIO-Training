@@ -1,3 +1,4 @@
+const allure = require('allure-commandline');
 exports.config = {
     //
     // ====================
@@ -17,7 +18,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -128,9 +129,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
-
-
+    reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
     
     //
     // Options to be passed to Mocha.
@@ -265,8 +264,24 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: (exitCode, config, capabilities, results) => {
+        const reportError = new Error('Could not generate Allure report.');
+          const generation = allure(['generate', 'allure-results', '--clean']);
+          return new Promise((resolve, reject) => {
+              const generationTimeout = setTimeout(
+                  () => reject(reportError),
+                  15000);
+  
+              generation.on('exit', function(exitCode) {
+                  clearTimeout(generationTimeout);
+  
+                  if (exitCode !== 0) {
+                      return reject(reportError);
+                  }
+                  resolve('Allure report successfully generated.');
+              })
+          })
+      }
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session
