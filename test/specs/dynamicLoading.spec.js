@@ -1,5 +1,4 @@
-import {expect} from 'chai';
-import DynamicLoadingPage from 'src/pages/DynamicLoadingPage';
+import DynamicLoadingPage from '../../src/pages/DynamicLoadingPage';
 
 describe('Dynamic loading', () => {
     it('is no problem with waitUntil', () => {
@@ -8,7 +7,7 @@ describe('Dynamic loading', () => {
         DynamicLoadingPage.start;
         DynamicLoadingPage.waitUntilElementIsDisplayed();
 
-        expect(DynamicLoadingPage.finishText).to.eq('Hello World!');
+        expect(DynamicLoadingPage.finishText).toEqual('Hello World!');
     });
 
     it('even when element is rendered after loading', () => {
@@ -17,6 +16,6 @@ describe('Dynamic loading', () => {
         DynamicLoadingPage.start;
         DynamicLoadingPage.waitUntilElementIsDisplayed();
 
-        expect(DynamicLoadingPage.finishText).to.eq('Hello World!');
+        expect(DynamicLoadingPage.finishText).toEqual('Hello World!');
     });
 });

@@ -1,5 +1,4 @@
-import {expect} from 'chai';
-import JavaScriptAlertsPage from 'src/pages/JavaScriptAlertsPage';
+import JavaScriptAlertsPage from '../../src/pages/JavaScriptAlertsPage';
 
 describe('JavaScript Alerts', () => {
     it('can be accepted', () => {
@@ -8,6 +7,6 @@ describe('JavaScript Alerts', () => {
 
         browser.acceptAlert();
 
-        expect(JavaScriptAlertsPage.result).to.eq('You successfuly clicked an alert');
+        expect(JavaScriptAlertsPage.result).toEqual('You successfuly clicked an alert');
     });
 });

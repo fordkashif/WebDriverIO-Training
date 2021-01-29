@@ -1,6 +1,5 @@
-import {expect} from 'chai';
-import {imagePath} from 'src/assets';
-import FileUploadPage from 'src/pages/FileUploadPage';
+import {imagePath} from '../../src/assests';
+import FileUploadPage from '../../src/pages/FileUploadPage';
 
 describe('File upload', () => {
     it('works', () => {
@@ -11,6 +10,6 @@ describe('File upload', () => {
         FileUploadPage.chooseFile(filePath);
         FileUploadPage.upload;
 
-        expect(FileUploadPage.uploadedFiles).to.eq(imageName);
+        expect(FileUploadPage.uploadedFiles).toEqual(imageName);
     });
 });
