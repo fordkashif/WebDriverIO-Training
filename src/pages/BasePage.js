@@ -7,7 +7,7 @@ export default class BasePage {
     * Opens a sub page of the page
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
-    open (path) {
-        return browser.url(`https://www.saucedemo.com/${path}`)
+    open (path) { //login
+        return browser.url(`https://wecare.nginxdev.egovja.com/${path}`) //https://www.saucedemo.com/login
     }
 }

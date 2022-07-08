@@ -24,5 +24,8 @@
     "@wdio/sync": "^6.11.0",
     "allure-commandline": "^2.13.8",
     "lodash": "^4.17.20"
+  },
+  "dependencies": {
+    "webdriverio": "^7.19.7"
   }
 }

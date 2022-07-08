@@ -1,6 +1,6 @@
 const shared = {
     // Default user logged in for most tests
-    username: 'tomsmith',
+    username: 'standard_user',
     email: 'tom@example.com',
     alternateEmail: 'josh@example.com',
 };
@@ -13,7 +13,7 @@ const production = {
 };
 
 const staging = {
-    password: 'Pa$$w0rd',
+    password: 'secret_sauce',
     domain: 'staging.example.com',
     userId: '456',
     accessToken: 'f95da72f-e8fd-492b-ac6d-0efb3eba428b',
